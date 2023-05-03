@@ -25,10 +25,10 @@ while attempt<4
     username = gets.chomp
     p "password:"
     password= gets.chomp
-
     auth_user(username,password,users)
     p "press n to quit or any other key to continue"
 input = gets.chomp.downcase
 break if input == "n"
 attempt +=1
 end
+puts "You have exceed the limit" if attempt == 4
