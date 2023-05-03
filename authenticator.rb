@@ -1,16 +1,17 @@
 users = [
     {username:"pooja",password: "password1"},
     {username: "akansha", password: "password2"},
-    {username:"pratiksha",password:"password3"},
-    {username:"nishtha",passowrd:"password4"}
+    {username: "pratiksha",password: "password3"},
+    {username: "nishtha",passowrd: "password4"}
 ]
 def auth_user(username,password,list_of_user)
     list_of_user.each do|user_record|
-        if user_record[:username]==username && user_record[:password]== password
-            return user_record
+        if user_record[:username] == username && user_record[:password]== password
+             p user_record
+             return
         end
     end
-    "credentials are not correct"
+    p "credentials are not correct"
 end
 20.times {
     print("-")
@@ -24,6 +25,7 @@ while attempt<4
     username = gets.chomp
     p "password:"
     password= gets.chomp
+
     auth_user(username,password,users)
     p "press n to quit or any other key to continue"
 input = gets.chomp.downcase
